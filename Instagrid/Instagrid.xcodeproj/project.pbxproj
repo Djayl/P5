@@ -21,7 +21,7 @@
 		F0D2F84D2191EDCF00586B43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0D2F84F2191EDD000586B43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0D2F8522191EDD000586B43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F0D2F8542191EDD000586B43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0D2F8542191EDD000586B43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,46 @@
 		F0D2F8472191EDCF00586B43 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				F0D2F8482191EDCF00586B43 /* AppDelegate.swift */,
-				F0D2F84A2191EDCF00586B43 /* ViewController.swift */,
-				F0D2F84C2191EDCF00586B43 /* Main.storyboard */,
-				F0D2F84F2191EDD000586B43 /* Assets.xcassets */,
-				F0D2F8512191EDD000586B43 /* LaunchScreen.storyboard */,
 				F0D2F8542191EDD000586B43 /* Info.plist */,
+				F0D2F85D2191EE6600586B43 /* Supporting Files */,
+				F0D2F85A2191EE0D00586B43 /* Model */,
+				F0D2F85B2191EE1A00586B43 /* View */,
+				F0D2F85C2191EE3000586B43 /* Controller */,
 			);
 			path = Instagrid;
+			sourceTree = "<group>";
+		};
+		F0D2F85A2191EE0D00586B43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0D2F85B2191EE1A00586B43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0D2F84C2191EDCF00586B43 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0D2F85C2191EE3000586B43 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0D2F84A2191EDCF00586B43 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0D2F85D2191EE6600586B43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0D2F8482191EDCF00586B43 /* AppDelegate.swift */,
+				F0D2F84F2191EDD000586B43 /* Assets.xcassets */,
+				F0D2F8512191EDD000586B43 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
