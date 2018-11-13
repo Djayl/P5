@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Delm-Medium.otf">
+            <string>Delm-Medium</string>
+        </array>
         <array key="ThirstySoftRegular.otf">
             <string>ThirstySoftRegular</string>
         </array>
@@ -37,21 +40,35 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KGj-gH-WBa">
                                 <rect key="frame" x="57.5" y="521" width="260" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOV-k8-9w1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOV-k8-9w1" userLabel="Button 1">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="y60-tO-tAA"/>
                                         </constraints>
                                         <state key="normal" image="Layout 1"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOB-e2-6Px">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOB-e2-6Px" userLabel="Button 2">
                                         <rect key="frame" x="90" y="0.0" width="80" height="80"/>
                                         <state key="normal" image="Layout 2"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-dK-aEk">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-dK-aEk" userLabel="Button 3">
                                         <rect key="frame" x="180" y="0.0" width="80" height="80"/>
                                         <state key="normal" image="Layout 3"/>
                                     </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4Q5-Lj-weF">
+                                <rect key="frame" x="98.5" y="123.5" width="178.5" height="47.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flèche" translatesAutoresizingMaskIntoConstraints="NO" id="kco-4b-ibp" userLabel="Swipeup">
+                                        <rect key="frame" x="81.5" y="0.0" width="15" height="10"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5b-gA-FVz">
+                                        <rect key="frame" x="0.0" y="15" width="178.5" height="32.5"/>
+                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="29"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -60,8 +77,10 @@
                             <constraint firstItem="KGj-gH-WBa" firstAttribute="top" secondItem="rv8-ZX-0BM" secondAttribute="bottom" constant="40" id="B4c-p2-fd7"/>
                             <constraint firstItem="KGj-gH-WBa" firstAttribute="centerX" secondItem="rv8-ZX-0BM" secondAttribute="centerX" id="Bab-qe-QGd"/>
                             <constraint firstItem="oIH-Ry-8i6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BzB-9k-dNS"/>
+                            <constraint firstItem="4Q5-Lj-weF" firstAttribute="centerX" secondItem="rv8-ZX-0BM" secondAttribute="centerX" id="Exp-vi-MUD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rv8-ZX-0BM" secondAttribute="trailing" constant="40" id="Yo7-8R-VfR"/>
                             <constraint firstItem="oIH-Ry-8i6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="kII-Jy-ada"/>
+                            <constraint firstItem="rv8-ZX-0BM" firstAttribute="top" secondItem="4Q5-Lj-weF" secondAttribute="bottom" constant="15" id="niV-aV-1gp"/>
                             <constraint firstItem="rv8-ZX-0BM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vOf-hv-C8A"/>
                             <constraint firstItem="rv8-ZX-0BM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="yX0-Yk-dhS"/>
                         </constraints>
@@ -78,5 +97,6 @@
         <image name="Layout 2" width="80" height="80"/>
         <image name="Layout 3" width="80" height="80"/>
         <image name="Rectangle" width="308" height="308"/>
+        <image name="flèche" width="15" height="10"/>
     </resources>
 </document>
