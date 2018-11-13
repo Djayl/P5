@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ThirstySoftRegular.otf">
+            <string>ThirstySoftRegular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,20 +22,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G85-6Y-Sls">
-                                <rect key="frame" x="40" y="204" width="295" height="295"/>
-                                <color key="backgroundColor" red="0.17254901960784313" green="0.40000000000000002" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="rv8-ZX-0BM">
+                                <rect key="frame" x="40" y="186" width="295" height="295"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="G85-6Y-Sls" secondAttribute="height" multiplier="1:1" id="ahu-0S-S17"/>
+                                    <constraint firstAttribute="width" secondItem="rv8-ZX-0BM" secondAttribute="height" multiplier="1:1" id="cnp-9N-U36"/>
                                 </constraints>
-                            </view>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIH-Ry-8i6">
+                                <rect key="frame" x="130.5" y="25" width="114.5" height="37.5"/>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.74117647058823533" green="0.83921568627450982" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G85-6Y-Sls" secondAttribute="trailing" constant="40" id="14h-kM-rUW"/>
-                            <constraint firstItem="G85-6Y-Sls" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="184" id="KoD-Lk-ewR"/>
-                            <constraint firstItem="G85-6Y-Sls" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="M6Q-7p-Hqn"/>
-                            <constraint firstItem="G85-6Y-Sls" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tw6-4W-utR"/>
+                            <constraint firstItem="oIH-Ry-8i6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BzB-9k-dNS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rv8-ZX-0BM" secondAttribute="trailing" constant="40" id="Yo7-8R-VfR"/>
+                            <constraint firstItem="oIH-Ry-8i6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="kII-Jy-ada"/>
+                            <constraint firstItem="rv8-ZX-0BM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vOf-hv-C8A"/>
+                            <constraint firstItem="rv8-ZX-0BM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="yX0-Yk-dhS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,4 +51,7 @@
             <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Rectangle" width="308" height="308"/>
+    </resources>
 </document>
