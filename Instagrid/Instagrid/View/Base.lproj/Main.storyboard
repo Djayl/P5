@@ -34,9 +34,31 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KGj-gH-WBa">
+                                <rect key="frame" x="57.5" y="521" width="260" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOV-k8-9w1">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="y60-tO-tAA"/>
+                                        </constraints>
+                                        <state key="normal" image="Layout 1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOB-e2-6Px">
+                                        <rect key="frame" x="90" y="0.0" width="80" height="80"/>
+                                        <state key="normal" image="Layout 2"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-dK-aEk">
+                                        <rect key="frame" x="180" y="0.0" width="80" height="80"/>
+                                        <state key="normal" image="Layout 3"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.74117647058823533" green="0.83921568627450982" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="KGj-gH-WBa" firstAttribute="top" secondItem="rv8-ZX-0BM" secondAttribute="bottom" constant="40" id="B4c-p2-fd7"/>
+                            <constraint firstItem="KGj-gH-WBa" firstAttribute="centerX" secondItem="rv8-ZX-0BM" secondAttribute="centerX" id="Bab-qe-QGd"/>
                             <constraint firstItem="oIH-Ry-8i6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BzB-9k-dNS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rv8-ZX-0BM" secondAttribute="trailing" constant="40" id="Yo7-8R-VfR"/>
                             <constraint firstItem="oIH-Ry-8i6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="kII-Jy-ada"/>
@@ -52,6 +74,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Layout 1" width="80" height="80"/>
+        <image name="Layout 2" width="80" height="80"/>
+        <image name="Layout 3" width="80" height="80"/>
         <image name="Rectangle" width="308" height="308"/>
     </resources>
 </document>
