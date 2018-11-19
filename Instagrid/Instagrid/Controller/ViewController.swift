@@ -10,11 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // Vars:
+    private var orientation = UIDevice.current.orientation
+    private var swipeLabel: String!
+    
+    // Outlets:
+    @IBOutlet weak var instagridLabel: UILabel!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
+    private func swipeLabelChange() {
+        if orientation.isPortrait {
+            swipeLabel = "Swipe up to \n share"
+        } else { swipeLabel = "Swipe left to \n share"
+        }
+    }
 
 }
 
