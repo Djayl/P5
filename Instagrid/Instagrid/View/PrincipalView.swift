@@ -10,6 +10,18 @@ import UIKit
 
 class PrincipalView: UIView {
 
- 
+    // Outlets:
+    @IBOutlet weak var topRightView: UIView!
+    @IBOutlet weak var topLeftView: UIView!
+    @IBOutlet weak var rectangleView: UIView!
+    
+    @IBOutlet weak var topRightButton: UIButton!
+    @IBOutlet weak var topLeftButton: UIButton!
+    @IBOutlet weak var rectangleButton: UIButton!
+    
+    @IBOutlet weak var topRightImageView: UIImageView!
+    @IBOutlet weak var topLeftImageView: UIImageView!
+    @IBOutlet weak var rectangleImageView: UIImageView!
+    
 
 }
