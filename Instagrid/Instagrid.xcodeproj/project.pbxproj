@@ -95,9 +95,9 @@
 		F0D2F85D2191EE6600586B43 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0D2F8482191EDCF00586B43 /* AppDelegate.swift */,
 				F08BA4F8219B0AAB00802647 /* Delm-Medium.otf */,
 				F08BA4F5219B0A3400802647 /* ThirstySoftRegular.otf */,
-				F0D2F8482191EDCF00586B43 /* AppDelegate.swift */,
 				F0D2F84F2191EDD000586B43 /* Assets.xcassets */,
 				F0D2F8512191EDD000586B43 /* LaunchScreen.storyboard */,
 				F0D2F8542191EDD000586B43 /* Info.plist */,

@@ -10,28 +10,38 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // Vars:
+    // Vars
+    private let imagePicker = UIImagePickerController()
     private var orientation = UIDevice.current.orientation
-    private var swipeLabel: String!
+    private var swipeGestureRecognizer: UISwipeGestureRecognizer?
     
-    // Outlets:
-    @IBOutlet weak var instagridLabel: UILabel!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    
+    // Outlets
+    @IBOutlet weak var firstStyleButton: UIButton!
+    @IBOutlet weak var secondStyleButton: UIButton!
+    @IBOutlet weak var thirdStyleButton: UIButton!
+    @IBOutlet weak var principalView: PrincipalView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // Actions
+    
+    @IBAction func didTapFirstStyleButton() {
+        principalView.style = .first
+    }
+    @IBAction func didTapSecondStyleButton() {
+        principalView.style = .second
+    }
+    @IBAction func didTapThirdStyleButton() {
+        principalView.style = .third
+    }
+    
+    
         
-    }
-    private func swipeLabelChange() {
-        if orientation.isPortrait {
-            swipeLabel = "Swipe up to \n share"
-        } else { swipeLabel = "Swipe left to \n share"
-        }
-    }
+    
+   
 
 }
 
