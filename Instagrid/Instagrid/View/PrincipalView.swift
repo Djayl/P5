@@ -40,29 +40,98 @@ class PrincipalView: UIView {
     func setStyle(_ style: Style) {
         switch style {
         case .first:
-        topRightView.isHidden = true
-        topLeftView.isHidden = false
-        topLeftView.frame.size.width = 250
-        topLeftButton.center = self.topLeftView.center
-        bottomRightView.isHidden = false
-        bottomLeftView.isHidden = false
+        firstStyle()
         case .second:
-        topRightView.isHidden = false
-        topLeftView.isHidden = false
-        bottomRightView.isHidden = true
-        bottomLeftView.isHidden = false
-        bottomLeftView.frame.size.width = 250
-        bottomLeftButton.center = self.bottomLeftView.center
+        secondStyle()
         case .third:
-        topLeftView.isHidden = false
-        topRightView.isHidden = false
-        bottomLeftView.isHidden = false
-        bottomRightView.isHidden = false
+        thirdStyle()
+        
         }
     }
     
+    private func firstStyle() {
+        topRectangleViewStyle()
+        bottomRightViewStyle()
+        bottomLeftViewStyle()
+        
+    }
+    private func secondStyle() {
+        topRightViewStyle()
+        topLeftViewStyle()
+        bottomRectangleViewStyle()
+        
+    }
+    private func thirdStyle() {
+        topRightViewStyle()
+        topLeftViewStyle()
+        bottomRightViewStyle()
+        bottomLeftViewStyle()
+    }
     
-    
-    
-    
+    private func topRightViewStyle() {
+        topRightView.isHidden = false
+        topRightView.frame.size.width = 135.5
+        topRightView.frame.size.height = 135.5
+        topRightImageView.isHidden = false
+        topRightImageView.frame.size.width = 135.5
+        topRightImageView.frame.size.height = 135.5
+        topRightButton.isHidden = false
+        topRightButton.center = self.topRightView.center
+    }
+    private func topLeftViewStyle() {
+        topLeftView.isHidden = false
+        topLeftView.frame.size.width = 135.5
+        topLeftView.frame.size.height = 135.5
+        topLeftImageView.isHidden = false
+        topLeftImageView.frame.size.width = 135.5
+        topLeftImageView.frame.size.height = 135.5
+        topLeftButton.isHidden = false
+        topLeftButton.center = self.topLeftView.center
+    }
+    private func bottomLeftViewStyle() {
+        bottomLeftView.isHidden = false
+        bottomLeftView.frame.size.width = 135.5
+        bottomLeftView.frame.size.height = 135.5
+        bottomLeftImageView.isHidden = false
+        bottomLeftImageView.frame.size.width = 135.5
+        bottomLeftImageView.frame.size.height = 135.5
+        bottomLeftButton.isHidden = false
+        bottomLeftButton.center = self.bottomRightView.center
+    }
+    private func bottomRightViewStyle() {
+        bottomRightView.isHidden = false
+        bottomRightView.frame.size.width = 135.5
+        bottomRightView.frame.size.height = 135.5
+        bottomRightImageView.isHidden = false
+        bottomRightImageView.frame.size.width = 135.5
+        bottomRightImageView.frame.size.height = 135.5
+        bottomRightButton.isHidden = false
+        bottomRightButton.center = self.bottomRightView.center
+    }
+    private func topRectangleViewStyle() {
+        topLeftView.isHidden = true
+        topLeftImageView.isHidden = true
+        topLeftButton.isHidden = true
+        topRightView.isHidden = false
+        topRightView.frame.size.width = 279
+        topRightView.frame.size.height = 135.5
+        topRightImageView.isHidden = false
+        topRightImageView.frame.size.width = 279
+        topRightImageView.frame.size.height = 135.5
+        topRightButton.isHidden = false
+        topRightButton.center = self.topRightView.center
+    }
+    private func bottomRectangleViewStyle() {
+        bottomLeftView.isHidden = true
+        bottomLeftImageView.isHidden = true
+        bottomLeftButton.isHidden = true
+        bottomRightView.isHidden = false
+        bottomRightView.frame.size.width = 279
+        bottomRightView.frame.size.height = 135.5
+        bottomRightImageView.isHidden = false
+        bottomRightImageView.frame.size.width = 279
+        bottomRightImageView.frame.size.height = 135.5
+        bottomRightButton.isHidden = false
+        bottomRightButton.center = self.topRightView.center
+    }
 }

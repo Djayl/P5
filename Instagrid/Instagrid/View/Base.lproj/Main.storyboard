@@ -273,15 +273,10 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="Button1" destination="GOV-k8-9w1" id="aWq-qA-03c"/>
-                        <outlet property="Button2" destination="mOB-e2-6Px" id="asd-FS-Q1y"/>
-                        <outlet property="Button3" destination="tdm-dK-aEk" id="ilH-RR-tdM"/>
-                        <outlet property="InstagridLabel" destination="oIH-Ry-8i6" id="k9f-Ol-LUd"/>
-                        <outlet property="SwipeLabel" destination="j5b-gA-FVz" id="5kN-pV-0xu"/>
-                        <outlet property="firstStyleButton" destination="GOV-k8-9w1" id="1FG-Bq-rMo"/>
+                        <outlet property="firstStyleButton" destination="GOV-k8-9w1" id="8pJ-cF-3p6"/>
                         <outlet property="principalView" destination="AIG-jf-wyM" id="huk-XC-H3A"/>
-                        <outlet property="secondStyleButton" destination="mOB-e2-6Px" id="BjH-CU-sx8"/>
-                        <outlet property="thirdStyleButton" destination="tdm-dK-aEk" id="Apy-Kp-7Pb"/>
+                        <outlet property="secondStyleButton" destination="mOB-e2-6Px" id="fhB-kA-Knb"/>
+                        <outlet property="thirdStyleButton" destination="tdm-dK-aEk" id="sFN-wc-kc7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
