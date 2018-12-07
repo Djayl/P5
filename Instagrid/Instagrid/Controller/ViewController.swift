@@ -31,17 +31,29 @@ class ViewController: UIViewController {
     
     @IBAction func didTapFirstStyleButton() {
         principalView.style = .first
+        buttonSelected()
     }
     @IBAction func didTapSecondStyleButton() {
         principalView.style = .second
+        buttonSelected()
     }
     @IBAction func didTapThirdStyleButton() {
         principalView.style = .third
+        buttonSelected()
     }
     
+    private func buttonSelected() {
+        if firstStyleButton.isSelected {
+            firstStyleButton.backgroundImage(for: .normal)
+        }
+        else if secondStyleButton.isSelected {
+            secondStyleButton.backgroundColor = UIColor(patternImage: UIImage(named: "Selected")!)
+        }
+        else {
+            thirdStyleButton.backgroundColor = UIColor(patternImage: UIImage(named: "Selected")!)
+    }
+        
     
-    
-   
-
+    }
 }
 
