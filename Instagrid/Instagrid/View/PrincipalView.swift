@@ -10,7 +10,11 @@ import UIKit
 
 class PrincipalView: UIView {
 
+    let bordure : CGFloat = 8
+    
+    
     // Outlets:
+    
     @IBOutlet weak var topRightView: UIView!
     @IBOutlet weak var topLeftView: UIView!
     @IBOutlet weak var bottomRightView: UIView!
@@ -51,15 +55,18 @@ class PrincipalView: UIView {
     private func firstStyle() {
         // afficher ce qui est nécessaire à afficher et faire disparaitre le reste
         
-        topRightView.isHidden = false
+        topRightView.isHidden = true
         topLeftView.isHidden = false
         bottomRightView.isHidden = false
-        bottomLeftView.isHidden = true
-        topRightButton.isHidden = false
+        bottomLeftView.isHidden = false
+        topRightButton.isHidden = true
         topLeftButton.isHidden = false
-        bottomLeftButton.isHidden = true
+        bottomLeftButton.isHidden = false
         bottomRightButton.isHidden = false
-        bottomRightButton.center = self.bottomRightView.center
+        
+        topLeftView.frame.size.width = self.frame.size.width-bordure*2
+       
+        topLeftButton.center = topLeftView.center
         
     }
     private func secondStyle() {
@@ -68,14 +75,17 @@ class PrincipalView: UIView {
         topRightButton.isHidden = false
         topLeftView.isHidden = false
         topLeftButton.isHidden = false
-        bottomRightView.isHidden = false
-        bottomRightButton.isHidden = false
-        bottomRightButton.center = self.bottomRightView.center
-        bottomLeftView.isHidden = true
-        bottomLeftButton.isHidden = true
+        bottomRightView.isHidden = true
+        bottomRightButton.isHidden = true
+        bottomLeftButton.center = bottomLeftView.center
+        bottomLeftView.isHidden = false
+        bottomLeftButton.isHidden = false
+        bottomLeftView.frame.size.width = self.frame.size.width-bordure*2
+        
         
     }
     private func thirdStyle() {
+        
         topLeftView.isHidden = false
         topLeftButton.isHidden = false
         topRightView.isHidden = false

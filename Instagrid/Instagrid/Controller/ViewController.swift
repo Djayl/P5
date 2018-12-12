@@ -31,15 +31,24 @@ class ViewController: UIViewController {
     
     @IBAction func didTapFirstStyleButton() {
         principalView.style = .first
-        buttonSelected()
+        firstStyleButton.setImage(UIImage(named: "Selected"), for: .normal)
+        secondStyleButton.setImage(nil, for: .normal)
+        thirdStyleButton.setImage(nil, for: .normal)
+        
     }
     @IBAction func didTapSecondStyleButton() {
         principalView.style = .second
-        buttonSelected()
+        secondStyleButton.setImage(UIImage(named: "Selected"), for: .normal)
+        firstStyleButton.setImage(nil, for: .normal)
+        thirdStyleButton.setImage(nil, for: .normal)
+        
     }
     @IBAction func didTapThirdStyleButton() {
         principalView.style = .third
-        buttonSelected()
+       thirdStyleButton.setImage(UIImage(named: "Selected"), for: .normal)
+        secondStyleButton.setImage(nil, for: .normal)
+        firstStyleButton.setImage(nil, for: .normal)
+        
     }
     
     private func buttonSelected() {
