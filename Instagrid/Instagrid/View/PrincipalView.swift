@@ -24,7 +24,8 @@ class PrincipalView: UIView {
     @IBOutlet weak var topLeftButton: UIButton!
     @IBOutlet weak var bottomRightButton: UIButton!
     @IBOutlet weak var bottomLeftButton: UIButton!
-    
+    @IBOutlet weak var topCentralButton: UIButton!
+    @IBOutlet weak var bottomCentralButton: UIButton!
 
     
     
@@ -53,117 +54,63 @@ class PrincipalView: UIView {
     }
     
     private func firstStyle() {
-        // afficher ce qui est nécessaire à afficher et faire disparaitre le reste
+        
+        bottomLeftView.frame.size.width = self.frame.size.width-180
+        bottomRightView.frame.size.width = self.frame.size.width-180
         
         topRightView.isHidden = true
         topLeftView.isHidden = false
         bottomRightView.isHidden = false
         bottomLeftView.isHidden = false
         topRightButton.isHidden = true
-        topLeftButton.isHidden = false
+        topLeftButton.isHidden = true
+        topCentralButton.isHidden = false
         bottomLeftButton.isHidden = false
         bottomRightButton.isHidden = false
-        
+        bottomCentralButton.isHidden = true
         topLeftView.frame.size.width = self.frame.size.width-bordure*2
-       
-        topLeftButton.center = topLeftView.center
+        
+        
+        
         
     }
     private func secondStyle() {
-        
+        topRightView.frame.size.width = self.frame.size.width-180
         topRightView.isHidden = false
-        topRightButton.isHidden = false
+        topLeftView.frame.size.width = self.frame.size.width-180
         topLeftView.isHidden = false
-        topLeftButton.isHidden = false
         bottomRightView.isHidden = true
-        bottomRightButton.isHidden = true
-        bottomLeftButton.center = bottomLeftView.center
         bottomLeftView.isHidden = false
-        bottomLeftButton.isHidden = false
+        topRightButton.isHidden = false
+        topLeftButton.isHidden = false
+        bottomLeftButton.isHidden = true
+        bottomRightButton.isHidden = true
+        bottomCentralButton.isHidden = false
         bottomLeftView.frame.size.width = self.frame.size.width-bordure*2
-        
+        topCentralButton.isHidden = true
+        bottomLeftButton.center = bottomLeftView.center
         
     }
     private func thirdStyle() {
         
+        topLeftView.frame.size.width = self.frame.size.width-180
+        topRightView.frame.size.width = self.frame.size.width-180
+        bottomRightView.frame.size.width = self.frame.size.width-180
+        bottomLeftView.frame.size.width = self.frame.size.width-180
         topLeftView.isHidden = false
+        bottomCentralButton.isHidden = true
+        topCentralButton.isHidden = true
         topLeftButton.isHidden = false
         topRightView.isHidden = false
+        
         topRightButton.isHidden = false
         bottomRightView.isHidden = false
+        
         bottomRightButton.isHidden = false
         bottomLeftView.isHidden = false
+        
         bottomLeftButton.isHidden = false
     }
     
-//    private func topRightViewStyle() {
-//        topRightView.isHidden = false
-//        //topRightView.frame.size.width = 135.5
-//        //topRightView.frame.size.height = 135.5
-//
-//        //topRightImageView.frame.size.width = 135.5
-//        //topRightImageView.frame.size.height = 135.5
-//        topRightButton.isHidden = false
-//        topRightButton.center = self.topRightView.center
-//    }
-//    private func topLeftViewStyle() {
-//        topLeftView.isHidden = false
-//        //topLeftView.frame.size.width = 135.5
-//        //topLeftView.frame.size.height = 135.5
-//
-//        //topLeftImageView.frame.size.width = 135.5
-//        //topLeftImageView.frame.size.height = 135.5
-//        topLeftButton.isHidden = false
-//        topLeftButton.center = self.topLeftView.center
-//    }
-//    private func bottomLeftViewStyle() {
-//        bottomLeftView.isHidden = false
-//        //bottomLeftView.frame.size.width = 135.5
-//        //bottomLeftView.frame.size.height = 135.5
-//
-//        //bottomLeftImageView.frame.size.width = 135.5
-//        //bottomLeftImageView.frame.size.height = 135.5
-//        bottomLeftButton.isHidden = false
-//        bottomLeftButton.center = self.bottomLeftView.center
-//    }
-//    private func bottomRightViewStyle() {
-//        bottomRightView.isHidden = false
-//        //bottomRightView.frame.size.width = 135.5
-//        //bottomRightView.frame.size.height = 135.5
-//
-//        //bottomRightImageView.frame.size.width = 135.5
-//        //bottomRightImageView.frame.size.height = 135.5
-//        bottomRightButton.isHidden = false
-//        bottomRightButton.center = self.bottomRightView.center
-//    }
-//    private func topRectangleViewStyle() {
-//        topLeftView.isHidden = true
-//
-//        topLeftButton.isHidden = true
-//        topRightView.isHidden = false
-//        //topRightView.frame.size.width = 279
-//        //topRightView.frame.size.height = 135.5
-//
-//        //topRightImageView.frame.size.width = 279
-//        //topRightImageView.frame.size.height = 135.5
-//        topRightButton.isHidden = false
-//        topRightButton.center = self.topRightView.center
-//    }
-//    private func bottomRectangleViewStyle() {
-//        bottomLeftView.isHidden = true
-//
-//        bottomLeftButton.isHidden = true
-//        bottomRightView.isHidden = false
-//        //bottomRightView.frame.size.width = 279
-//        //bottomRightView.frame.size.height = 135.5
-//
-//        //bottomRightImageView.frame.size.width = 279
-//        //bottomRightImageView.frame.size.height = 135.5
-//        bottomRightButton.isHidden = false
-//        bottomRightButton.center = self.bottomRightView.center
-//
-//    }
-    
-    
-    
+   
 }
