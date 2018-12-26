@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     private var orientation = UIDevice.current.orientation
     private var swipeGestureRecognizer: UISwipeGestureRecognizer?
     
+
     // Outlets
     @IBOutlet weak var firstStyleButton: UIButton!
     @IBOutlet weak var secondStyleButton: UIButton!
@@ -24,7 +25,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpObserver()
+        imagePicker.delegate = self
     }
     
     // Actions
@@ -51,18 +53,82 @@ class ViewController: UIViewController {
         
     }
     
-    private func buttonSelected() {
-        if firstStyleButton.isSelected {
-            firstStyleButton.backgroundImage(for: .normal)
-        }
-        else if secondStyleButton.isSelected {
-            secondStyleButton.backgroundColor = UIColor(patternImage: UIImage(named: "Selected")!)
-        }
-        else {
-            thirdStyleButton.backgroundColor = UIColor(patternImage: UIImage(named: "Selected")!)
-    }
+    func setUpObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(openSourceImage), name: Notification.Name(rawValue: "addButtonTouched"), object: nil)
         
+    }
     
+    
+    // Touch to add photo
+    @objc func imageTouched(sender: UITapGestureRecognizer) {
+        principalView.currentTag = sender.view?.tag
+        openSourceImage()
+    }
+    
+    
+    // Select the source
+    @objc func openSourceImage() {
+        let alert = UIAlertController(title: "Select Photo", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        alert.addAction(UIAlertAction(title: "Library", style: .default, handler: { _ in
+            self.openLibrary()
+        }))
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+   
+        
+    // Select photos from the library
+    func openLibrary() {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    // Use the camera to take pictures
+    func openCamera() {
+        if (UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = true
+            present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+        return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    }
+    
+   
+    fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+        return input.rawValue
     }
 }
+    
+    extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+            let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+            
+            guard let selectedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {return}
+            guard let tag = principalView.currentTag else {return}
+            
+            let imageViews = [principalView.topLeftView, principalView.topRightView, principalView.bottomLeftView, principalView.bottomRightView]
+            let buttons = [principalView.topLeftButton,principalView.topCentralButton,principalView.topRightButton,principalView.bottomLeftButton, principalView.bottomCentralButton,principalView.bottomRightButton]
+            imageViews[tag]?.image = selectedImage
+            buttons[tag]?.isHidden = true
+            let imageTap = UITapGestureRecognizer(target: self, action: #selector(imageTouched(sender:)))
+            imageViews[tag]?.addGestureRecognizer(imageTap)
+            dismiss(animated: true, completion: nil)
+        }
+    }
+
 
