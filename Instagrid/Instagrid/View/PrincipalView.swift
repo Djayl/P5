@@ -19,8 +19,15 @@ class PrincipalView: UIView {
     @IBOutlet weak var topLeftView: UIView!
     @IBOutlet weak var bottomRightView: UIView!
     @IBOutlet weak var bottomLeftView: UIView!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var bottomView: UIView!
     
-   
+    @IBOutlet weak var topRightImageView: UIImageView!
+    @IBOutlet weak var topLeftImageView: UIImageView!
+    @IBOutlet weak var bottomRightImageView: UIImageView!
+    @IBOutlet weak var bottomLeftImageView: UIImageView!
+    @IBOutlet weak var topImage: UIImageView!
+    @IBOutlet weak var bottomImage: UIImageView!
     
     
     @IBOutlet weak var topRightButton: UIButton!

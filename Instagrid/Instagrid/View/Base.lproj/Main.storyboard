@@ -158,6 +158,9 @@
                                             <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esu-MD-n2i" userLabel="Top Central Button">
                                                 <rect key="frame" x="115.5" y="43.5" width="48" height="48"/>
                                                 <state key="normal" backgroundImage="Combined Shape"/>
+                                                <connections>
+                                                    <action selector="buttonTapped:" destination="AIG-jf-wyM" eventType="touchUpInside" id="4an-GI-uxp"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,6 +185,9 @@
                                             <button hidden="YES" opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tr-u8-OgY" userLabel="Bottom Central Button">
                                                 <rect key="frame" x="115.5" y="43.5" width="48" height="48"/>
                                                 <state key="normal" backgroundImage="Combined Shape"/>
+                                                <connections>
+                                                    <action selector="buttonTapped:" destination="AIG-jf-wyM" eventType="touchUpInside" id="U6s-Tk-NT3"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -221,18 +227,30 @@
                                     <constraint firstItem="wPK-Kg-zxp" firstAttribute="centerX" secondItem="0G5-8U-TxO" secondAttribute="centerX" id="zfW-9l-0Rd"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="bottomCentralButton" destination="5tr-u8-OgY" id="zcN-Zt-BYO"/>
+                                    <outlet property="bottomImage" destination="0G5-8U-TxO" id="nXl-bt-dcm"/>
                                     <outlet property="bottomLeftButton" destination="f6b-wj-rTV" id="y5r-2s-m5H"/>
+                                    <outlet property="bottomLeftImageView" destination="0Ge-A1-3TF" id="F8C-d4-qo8"/>
                                     <outlet property="bottomLeftView" destination="tDz-6M-Mej" id="4zn-jb-rxj"/>
                                     <outlet property="bottomRightButton" destination="6wS-ro-Q93" id="MjY-WT-bms"/>
+                                    <outlet property="bottomRightImageView" destination="mYD-Ot-Wzj" id="04O-i9-CbX"/>
                                     <outlet property="bottomRightView" destination="Vaa-Ji-5D8" id="nRk-g0-l69"/>
+                                    <outlet property="bottomView" destination="7mn-Jb-BA4" id="CqY-4H-LNU"/>
+                                    <outlet property="topCentralButton" destination="esu-MD-n2i" id="HwF-Wn-SRK"/>
+                                    <outlet property="topImage" destination="wPK-Kg-zxp" id="rQw-2y-Kwp"/>
                                     <outlet property="topLeftButton" destination="Az4-O6-WRC" id="JJm-Tc-CTz"/>
+                                    <outlet property="topLeftImageView" destination="9Gz-Sr-WYy" id="uXk-hA-mUP"/>
                                     <outlet property="topLeftView" destination="zU7-dE-OiR" id="OBJ-Gn-s2n"/>
                                     <outlet property="topRightButton" destination="jTM-bC-TyX" id="4yM-4f-Ifs"/>
+                                    <outlet property="topRightImageView" destination="TFt-Cz-CPh" id="TYJ-6O-7dE"/>
                                     <outlet property="topRightView" destination="Vfi-Xx-wiW" id="7Rn-Pe-JZ9"/>
+                                    <outlet property="topView" destination="dxK-TG-c2v" id="Uql-SD-nQ8"/>
                                     <outletCollection property="addingPhotoButtons" destination="Az4-O6-WRC" collectionClass="NSMutableArray" id="Apy-Xn-8D4"/>
                                     <outletCollection property="addingPhotoButtons" destination="jTM-bC-TyX" collectionClass="NSMutableArray" id="7j7-KN-LK4"/>
                                     <outletCollection property="addingPhotoButtons" destination="f6b-wj-rTV" collectionClass="NSMutableArray" id="sBq-Qa-N5a"/>
                                     <outletCollection property="addingPhotoButtons" destination="6wS-ro-Q93" collectionClass="NSMutableArray" id="Mhr-kj-UrD"/>
+                                    <outletCollection property="addingPhotoButtons" destination="esu-MD-n2i" collectionClass="NSMutableArray" id="ehf-dO-aG4"/>
+                                    <outletCollection property="addingPhotoButtons" destination="5tr-u8-OgY" collectionClass="NSMutableArray" id="JPg-JF-Igb"/>
                                 </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KGj-gH-WBa">
