@@ -73,76 +73,63 @@ class PrincipalView: UIView {
     
     private func firstStyle() {
         
-        bottomLeftView.frame.size.width = self.frame.size.width-180
-       
-        bottomRightView.frame.size.width = self.frame.size.width-180
-        
         topRightView.isHidden = true
-       
-        topLeftView.isHidden = false
-        
+        topRightImageView.isHidden = true
+        topLeftView.isHidden = true
+        bottomView.isHidden = true
+        bottomImage.isHidden = true
+        bottomCentralButton.isHidden = true
         bottomRightView.isHidden = false
-        
+        bottomRightImageView.isHidden = false
         bottomLeftView.isHidden = false
-       
+        bottomLeftImageView.isHidden = false
         topRightButton.isHidden = true
         topLeftButton.isHidden = true
         topCentralButton.isHidden = false
         bottomLeftButton.isHidden = false
         bottomRightButton.isHidden = false
         bottomCentralButton.isHidden = true
-        topLeftView.frame.size.width = self.frame.size.width-bordure*2
+        topView.isHidden = false
+        topImage.isHidden = false
        
         
     }
     private func secondStyle() {
-        topRightView.frame.size.width = self.frame.size.width-180
         
-        topRightView.isHidden = false
-        
-        topLeftView.frame.size.width = self.frame.size.width-180
-        
-        topLeftView.isHidden = false
-     
-        bottomRightView.isHidden = true
-    
-        bottomLeftView.isHidden = false
-     
-        topRightButton.isHidden = false
-        topLeftButton.isHidden = false
-        bottomLeftButton.isHidden = true
-        bottomRightButton.isHidden = true
-        bottomCentralButton.isHidden = false
-        bottomLeftView.frame.size.width = self.frame.size.width-bordure*2
-      
         topCentralButton.isHidden = true
-        bottomLeftButton.center = bottomLeftView.center
+        topView.isHidden = true
+        topImage.isHidden = true
+        topRightView.isHidden = false
+        topRightImageView.isHidden = false
+        topRightButton.isHidden = false
+        topLeftView.isHidden = false
+        topLeftImageView.isHidden = false
+        topLeftButton.isHidden = false
+        bottomView.isHidden = false
+        bottomImage.isHidden = false
+        bottomCentralButton.isHidden = false
         
     }
     private func thirdStyle() {
         
-        topLeftView.frame.size.width = self.frame.size.width-180
-       
-        topRightView.frame.size.width = self.frame.size.width-180
-       
-        bottomRightView.frame.size.width = self.frame.size.width-180
-       
-        bottomLeftView.frame.size.width = self.frame.size.width-180
-       
-        topLeftView.isHidden = false
-      
-        bottomCentralButton.isHidden = true
+        topView.isHidden = true
+        topImage.isHidden = true
         topCentralButton.isHidden = true
-        topLeftButton.isHidden = false
-        topRightView.isHidden = false
-        
-        topRightButton.isHidden = false
-        bottomRightView.isHidden = false
-     
-        bottomRightButton.isHidden = false
+        bottomView.isHidden = true
+        bottomImage.isHidden = true
+        bottomCentralButton.isHidden = true
         bottomLeftView.isHidden = false
-    
+        bottomLeftImageView.isHidden = false
         bottomLeftButton.isHidden = false
+        bottomRightView.isHidden = false
+        bottomRightImageView.isHidden = false
+        bottomRightButton.isHidden = false
+        topRightView.isHidden = false
+        topRightImageView.isHidden = false
+        topRightButton.isHidden = false
+        topLeftView.isHidden = false
+        topLeftImageView.isHidden = false
+        topLeftButton.isHidden = false
     
     }
     

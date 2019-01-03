@@ -118,17 +118,23 @@ class ViewController: UIViewController {
             
             let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             
-            guard let selectedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
-                print("no image found")
-                return}
-            guard let tag = principalView.currentTag else {return}
+            guard let selectedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {return}
             
+            
+            let imageViews = [principalView.topLeftImageView,principalView.topImage, principalView.topRightImageView, principalView.bottomLeftImageView, principalView.bottomImage, principalView.bottomRightImageView]
             let buttons = [principalView.topLeftButton,principalView.topCentralButton,principalView.topRightButton,principalView.bottomLeftButton, principalView.bottomCentralButton,principalView.bottomRightButton]
             
-            buttons[tag]?.isHidden = true
-            buttons[tag]?.setImage(selectedImage, for: .normal)
-            let imageTap = UITapGestureRecognizer(target: self, action: #selector(imageTouched(sender:)))
-            buttons[tag]?.addGestureRecognizer(imageTap)
+            for imageView in imageViews {
+                if imageView?.tag == principalView.currentTag {
+                    imageView?.image = selectedImage
+                    for button in buttons {
+                        if button?.tag == principalView.currentTag {
+                            button?.isHidden = true
+                            button?.setBackgroundImage(nil, for: .normal)
+                        }
+                    }
+                }
+            }
             dismiss(animated: true, completion: nil)
         }
         
