@@ -15,10 +15,10 @@ class PrincipalView: UIView {
     
     // Outlets:
     
-    @IBOutlet weak var topRightView: UIImageView!
-    @IBOutlet weak var topLeftView: UIImageView!
-    @IBOutlet weak var bottomRightView: UIImageView!
-    @IBOutlet weak var bottomLeftView: UIImageView!
+    @IBOutlet weak var topRightView: UIView!
+    @IBOutlet weak var topLeftView: UIView!
+    @IBOutlet weak var bottomRightView: UIView!
+    @IBOutlet weak var bottomLeftView: UIView!
     
    
     

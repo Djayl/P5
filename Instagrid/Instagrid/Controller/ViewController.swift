@@ -114,21 +114,29 @@ class ViewController: UIViewController {
     
     extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
             let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             
-            guard let selectedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {return}
+            guard let selectedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
+                print("no image found")
+                return}
             guard let tag = principalView.currentTag else {return}
             
-            let imageViews = [principalView.topLeftView, principalView.topRightView, principalView.bottomLeftView, principalView.bottomRightView]
             let buttons = [principalView.topLeftButton,principalView.topCentralButton,principalView.topRightButton,principalView.bottomLeftButton, principalView.bottomCentralButton,principalView.bottomRightButton]
-            imageViews[tag]?.image = selectedImage
+            
             buttons[tag]?.isHidden = true
+            buttons[tag]?.setImage(selectedImage, for: .normal)
             let imageTap = UITapGestureRecognizer(target: self, action: #selector(imageTouched(sender:)))
-            imageViews[tag]?.addGestureRecognizer(imageTap)
+            buttons[tag]?.addGestureRecognizer(imageTap)
             dismiss(animated: true, completion: nil)
         }
-    }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true, completion: nil)
+            
+        }
+        
+}
 
 
