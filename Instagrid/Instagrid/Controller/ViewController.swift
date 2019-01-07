@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     }
     
     // Principal View disappears at the end of animation
-    func tranformApplicationsView() {
+    func tranformPrincipalView() {
         if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
             UIView.animate(withDuration: 2.0, animations: {
                 self.principalView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
@@ -118,10 +118,32 @@ class ViewController: UIViewController {
     }*/
     
     // For animating and sharing Application View
-    @objc func swipeAction(_ sender : UISwipeGestureRecognizer) {
+    /*@objc func swipeAction(_ sender : UISwipeGestureRecognizer) {
         tranformApplicationsView()
         sharePrincipalView()
         
+    }*/
+    
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+       
+        switch principalView.style {
+        case .first:
+            if principalView.topImage.image != nil && principalView.bottomLeftImageView != nil && principalView.bottomRightImageView.image != nil {
+                tranformPrincipalView()
+                sharePrincipalView()
+            }
+        case .second:
+            if principalView.bottomImage.image != nil && principalView.topRightImageView.image != nil && principalView.topLeftImageView.image != nil {
+                tranformPrincipalView()
+                sharePrincipalView()
+            }
+        case .third:
+            if principalView.topRightImageView.image != nil && principalView.topLeftImageView.image != nil && principalView.bottomLeftImageView.image != nil && principalView.bottomRightImageView.image != nil {
+                tranformPrincipalView()
+                sharePrincipalView()
+            }
+       
+        }
     }
     
     // Touch to add photo
@@ -198,6 +220,7 @@ class ViewController: UIViewController {
                         }
                     }
                 }
+                
             }
             dismiss(animated: true, completion: nil)
         }

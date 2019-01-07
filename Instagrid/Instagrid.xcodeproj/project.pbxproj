@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F00B916621E38F1C001CDD6E /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B916521E38F1C001CDD6E /* UIImagePickerController.swift */; };
 		F08BA4F6219B0A3400802647 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F08BA4F5219B0A3400802647 /* ThirstySoftRegular.otf */; };
 		F08BA4F9219B0AAB00802647 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F08BA4F8219B0AAB00802647 /* Delm-Medium.otf */; };
 		F0D2F8492191EDCF00586B43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2F8482191EDCF00586B43 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F00B916521E38F1C001CDD6E /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
 		F01DAB6A21E2715200B8C299 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		F01DAB6B21E2715200B8C299 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		F01DAB6C21E2715200B8C299 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -348,6 +350,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F00B916721E38F6E001CDD6E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F00B916521E38F1C001CDD6E /* UIImagePickerController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F01DAB6921E2715200B8C299 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -682,6 +692,7 @@
 		F0D2F8472191EDCF00586B43 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				F00B916721E38F6E001CDD6E /* Extensions */,
 				F0D2F85D2191EE6600586B43 /* Supporting Files */,
 				F0D2F85A2191EE0D00586B43 /* Model */,
 				F0D2F85B2191EE1A00586B43 /* View */,
@@ -803,6 +814,7 @@
 				F0D2F84B2191EDCF00586B43 /* ViewController.swift in Sources */,
 				F0F6D71721A2BBC500CD0289 /* PrincipalView.swift in Sources */,
 				F0D2F8492191EDCF00586B43 /* AppDelegate.swift in Sources */,
+				F00B916621E38F1C001CDD6E /* UIImagePickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
