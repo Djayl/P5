@@ -144,16 +144,13 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxK-TG-c2v" userLabel="Top View">
-                                        <rect key="frame" x="8" y="8" width="279" height="135"/>
+                                        <rect key="frame" x="8" y="8" width="279" height="135.5"/>
                                         <subviews>
                                             <imageView hidden="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPK-Kg-zxp" userLabel="Top Image ">
-                                                <rect key="frame" x="0.0" y="0.0" width="279" height="135"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="wPK-Kg-zxp" secondAttribute="height" multiplier="31:15" id="qJL-p4-xns"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="135.5"/>
                                             </imageView>
                                             <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esu-MD-n2i" userLabel="Top Central Button">
-                                                <rect key="frame" x="115.5" y="43.5" width="48" height="48"/>
+                                                <rect key="frame" x="115.5" y="44" width="48" height="48"/>
                                                 <state key="normal" backgroundImage="Combined Shape"/>
                                                 <connections>
                                                     <action selector="buttonTapped:" destination="AIG-jf-wyM" eventType="touchUpInside" id="4an-GI-uxp"/>
@@ -164,7 +161,7 @@
                                         <constraints>
                                             <constraint firstItem="wPK-Kg-zxp" firstAttribute="leading" secondItem="dxK-TG-c2v" secondAttribute="leading" id="Pyr-o7-Nzu"/>
                                             <constraint firstItem="esu-MD-n2i" firstAttribute="centerX" secondItem="dxK-TG-c2v" secondAttribute="centerX" id="Weo-WG-zSc"/>
-                                            <constraint firstAttribute="width" secondItem="dxK-TG-c2v" secondAttribute="height" multiplier="31:15" id="oc1-E3-6WS"/>
+                                            <constraint firstAttribute="bottom" secondItem="wPK-Kg-zxp" secondAttribute="bottom" id="dMU-Ex-2pm"/>
                                             <constraint firstItem="wPK-Kg-zxp" firstAttribute="top" secondItem="dxK-TG-c2v" secondAttribute="top" id="pwY-Bn-Hvp"/>
                                             <constraint firstItem="esu-MD-n2i" firstAttribute="centerY" secondItem="dxK-TG-c2v" secondAttribute="centerY" id="ylH-NJ-tfW"/>
                                             <constraint firstAttribute="trailing" secondItem="wPK-Kg-zxp" secondAttribute="trailing" id="ypY-hP-JdL"/>
@@ -176,7 +173,7 @@
                                             <imageView hidden="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0G5-8U-TxO" userLabel="Bottom Image ">
                                                 <rect key="frame" x="0.0" y="0.0" width="279" height="135"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="0G5-8U-TxO" secondAttribute="height" multiplier="31:15" id="CRE-DI-5PS"/>
+                                                    <constraint firstAttribute="width" secondItem="0G5-8U-TxO" secondAttribute="height" multiplier="31:15" id="kp7-bS-lh2"/>
                                                 </constraints>
                                             </imageView>
                                             <button hidden="YES" opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tr-u8-OgY" userLabel="Bottom Central Button">
@@ -192,9 +189,9 @@
                                             <constraint firstAttribute="trailing" secondItem="0G5-8U-TxO" secondAttribute="trailing" id="Bhw-li-T0m"/>
                                             <constraint firstItem="0G5-8U-TxO" firstAttribute="leading" secondItem="7mn-Jb-BA4" secondAttribute="leading" id="ER6-Ii-U46"/>
                                             <constraint firstItem="5tr-u8-OgY" firstAttribute="centerY" secondItem="7mn-Jb-BA4" secondAttribute="centerY" id="EZR-kh-Php"/>
-                                            <constraint firstAttribute="width" secondItem="7mn-Jb-BA4" secondAttribute="height" multiplier="31:15" id="Htv-yX-PRK"/>
                                             <constraint firstItem="5tr-u8-OgY" firstAttribute="centerX" secondItem="7mn-Jb-BA4" secondAttribute="centerX" id="Qh4-Ax-g67"/>
                                             <constraint firstAttribute="bottom" secondItem="0G5-8U-TxO" secondAttribute="bottom" id="XIT-pc-6Zt"/>
+                                            <constraint firstItem="0G5-8U-TxO" firstAttribute="top" secondItem="7mn-Jb-BA4" secondAttribute="top" id="cuZ-Au-RUU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -202,6 +199,7 @@
                                 <constraints>
                                     <constraint firstItem="tDz-6M-Mej" firstAttribute="centerX" secondItem="zU7-dE-OiR" secondAttribute="centerX" id="32d-NW-Wth"/>
                                     <constraint firstItem="dxK-TG-c2v" firstAttribute="top" secondItem="AIG-jf-wyM" secondAttribute="top" constant="8" id="6u8-bB-B1U"/>
+                                    <constraint firstItem="tDz-6M-Mej" firstAttribute="top" secondItem="dxK-TG-c2v" secondAttribute="bottom" constant="8" id="9YX-AQ-Yrm"/>
                                     <constraint firstItem="7mn-Jb-BA4" firstAttribute="centerX" secondItem="dxK-TG-c2v" secondAttribute="centerX" id="FDM-et-mUX"/>
                                     <constraint firstItem="Vaa-Ji-5D8" firstAttribute="leading" secondItem="tDz-6M-Mej" secondAttribute="trailing" constant="8" id="IVJ-8Z-pqE"/>
                                     <constraint firstItem="Vaa-Ji-5D8" firstAttribute="top" secondItem="Vfi-Xx-wiW" secondAttribute="bottom" constant="8" id="J73-Oj-lWc"/>
@@ -283,11 +281,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4Q5-Lj-weF">
                                 <rect key="frame" x="70.5" y="122" width="234.5" height="49"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flèche" translatesAutoresizingMaskIntoConstraints="NO" id="kco-4b-ibp" userLabel="Swipeup">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flèche" translatesAutoresizingMaskIntoConstraints="NO" id="kco-4b-ibp" userLabel="Swipeup">
                                         <rect key="frame" x="109.5" y="0.0" width="15" height="10"/>
                                         <variation key="heightClass=compact" image="flèche 2"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5b-gA-FVz">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5b-gA-FVz">
                                         <rect key="frame" x="0.0" y="15" width="234.5" height="34"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Swipe left to share">
@@ -303,7 +301,7 @@
                                             <attributedString key="attributedText">
                                                 <fragment content="Swipe up to share">
                                                     <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <font key="NSFont" size="29" name=".SFNSDisplay"/>
                                                         <font key="NSOriginalFont" size="29" name=".SFNSDisplay"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -395,6 +393,7 @@
                         <outlet property="firstStyleButton" destination="GOV-k8-9w1" id="8pJ-cF-3p6"/>
                         <outlet property="principalView" destination="AIG-jf-wyM" id="huk-XC-H3A"/>
                         <outlet property="secondStyleButton" destination="mOB-e2-6Px" id="fhB-kA-Knb"/>
+                        <outlet property="swipeLabel" destination="j5b-gA-FVz" id="Blx-Uz-08G"/>
                         <outlet property="thirdStyleButton" destination="tdm-dK-aEk" id="sFN-wc-kc7"/>
                     </connections>
                 </viewController>

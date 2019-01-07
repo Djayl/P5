@@ -10,7 +10,7 @@ import UIKit
 
 class PrincipalView: UIView {
 
-    let bordure : CGFloat = 8
+    
     var currentTag: Int?
     
     // Outlets:

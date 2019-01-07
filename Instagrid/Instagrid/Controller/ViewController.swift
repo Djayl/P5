@@ -21,12 +21,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondStyleButton: UIButton!
     @IBOutlet weak var thirdStyleButton: UIButton!
     @IBOutlet weak var principalView: PrincipalView!
-    
+    @IBOutlet weak var swipeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpObserver()
         imagePicker.delegate = self
+        swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(_:)))
+        swipeLabel.isUserInteractionEnabled = true
+        swipeLabel.addGestureRecognizer(swipeGestureRecognizer!)
     }
     
     // Actions
@@ -55,9 +58,70 @@ class ViewController: UIViewController {
     
     func setUpObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(openSourceImage), name: Notification.Name(rawValue: "addButtonTouched"), object: nil)
+       
         
     }
     
+    // Direction of swipe according to orientation of screen
+    @objc private func setupSwipeDirection() {
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            swipeGestureRecognizer?.direction = .left
+            
+        } else {
+            swipeGestureRecognizer?.direction = .up
+        }
+    }
+    
+    // Principal View disappears at the end of animation
+    func tranformApplicationsView() {
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            UIView.animate(withDuration: 2.0, animations: {
+                self.principalView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
+            })
+        } else {
+            UIView.animate(withDuration: 2.0, animations: {
+                self.principalView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
+            })
+        }
+    }
+    
+    // Sharing Principal View with other application
+    func sharePrincipalView() {
+        let image = principalView!
+        let activityPrincipalView = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(activityPrincipalView, animated: true, completion: nil)
+        activityPrincipalView.completionWithItemsHandler = { _ , _ , _, _ in
+            UIView.animate(withDuration: 2.0, animations: {
+                self.principalView.transform = .identity
+            })
+        }
+        
+    }
+    
+    /*func setupGestures() {
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleUpSwipe(_:)))
+        swipeUp.direction = UISwipeGestureRecognizer.Direction.up
+        swipeLabel.addGestureRecognizer(swipeUp)
+        swipeLabel.isUserInteractionEnabled = true
+    }
+    
+    @objc func handleUpSwipe(_ recognizer: UISwipeGestureRecognizer) {
+        
+        
+    }*/
+    
+    /*@IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
+        if gestureRecognizer.state == .ended {
+            // Perform action.
+        }
+    }*/
+    
+    // For animating and sharing Application View
+    @objc func swipeAction(_ sender : UISwipeGestureRecognizer) {
+        tranformApplicationsView()
+        sharePrincipalView()
+        
+    }
     
     // Touch to add photo
     @objc func imageTouched(sender: UITapGestureRecognizer) {
@@ -80,7 +144,6 @@ class ViewController: UIViewController {
     }
     
    
-        
     // Select photos from the library
     func openLibrary() {
         imagePicker.sourceType = .photoLibrary
