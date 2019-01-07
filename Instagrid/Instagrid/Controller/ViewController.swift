@@ -59,6 +59,7 @@ class ViewController: UIViewController {
     func setUpObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(openSourceImage), name: Notification.Name(rawValue: "addButtonTouched"), object: nil)
        
+        NotificationCenter.default.addObserver(self, selector: #selector(setupSwipeDirection), name: UIDevice.orientationDidChangeNotification, object: nil)
         
     }
     
