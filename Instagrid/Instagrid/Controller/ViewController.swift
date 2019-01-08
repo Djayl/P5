@@ -88,7 +88,7 @@ class ViewController: UIViewController {
     
     // Sharing Principal View with other application
     func sharePrincipalView() {
-        let image = principalView!
+        guard let image = principalView.convertToUIImage() else { return }
         let activityPrincipalView = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(activityPrincipalView, animated: true, completion: nil)
         activityPrincipalView.completionWithItemsHandler = { _ , _ , _, _ in

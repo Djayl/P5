@@ -50,5 +50,7 @@
 	<string>$(PRODUCT_NAME) would like to access your camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like to access your photo</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>save photos</string>
 </dict>
 </plist>
