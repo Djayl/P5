@@ -48,10 +48,7 @@ class PrincipalView: UIView {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "addButtonTouched"), object: nil)
     }
 
-    enum Style {
-        case first, second, third
-        
-    }
+    
     
     var style: Style = .third {
         didSet {

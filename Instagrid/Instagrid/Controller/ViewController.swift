@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -14,7 +15,8 @@ class ViewController: UIViewController {
     private let imagePicker = UIImagePickerController()
     private var orientation = UIDevice.current.orientation
     private var swipeGestureRecognizer: UISwipeGestureRecognizer?
-    
+    //var musicFile = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer?
 
     // Outlets
     @IBOutlet weak var firstStyleButton: UIButton!
@@ -23,13 +25,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var principalView: PrincipalView!
     @IBOutlet weak var swipeLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpObserver()
+        
         imagePicker.delegate = self
         swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(_:)))
+        
         swipeLabel.isUserInteractionEnabled = true
         swipeLabel.addGestureRecognizer(swipeGestureRecognizer!)
+        addSound()
     }
     
     // Actions
@@ -55,6 +61,8 @@ class ViewController: UIViewController {
         firstStyleButton.setImage(nil, for: .normal)
         
     }
+    
+    // Methods:
     
     func setUpObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(openSourceImage), name: Notification.Name(rawValue: "addButtonTouched"), object: nil)
@@ -84,6 +92,9 @@ class ViewController: UIViewController {
                 self.principalView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
             })
         }
+        audioPlayer?.play()
+        audioPlayer?.numberOfLoops = 0
+        //audioPlayer?.pause()
     }
     
     // Sharing Principal View with other application
@@ -99,52 +110,35 @@ class ViewController: UIViewController {
         
     }
     
-    /*func setupGestures() {
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleUpSwipe(_:)))
-        swipeUp.direction = UISwipeGestureRecognizer.Direction.up
-        swipeLabel.addGestureRecognizer(swipeUp)
-        swipeLabel.isUserInteractionEnabled = true
-    }
-    
-    @objc func handleUpSwipe(_ recognizer: UISwipeGestureRecognizer) {
-        
-        
-    }*/
-    
-    /*@IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
-        if gestureRecognizer.state == .ended {
-            // Perform action.
-        }
-    }*/
-    
-    // For animating and sharing Application View
-    /*@objc func swipeAction(_ sender : UISwipeGestureRecognizer) {
-        tranformApplicationsView()
-        sharePrincipalView()
-        
-    }*/
-    
+    // Swipe after selecting the images
     @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
-       
+        
         switch principalView.style {
         case .first:
             if principalView.topImage.image != nil && principalView.bottomLeftImageView != nil && principalView.bottomRightImageView.image != nil {
                 tranformPrincipalView()
+                
                 sharePrincipalView()
             }
         case .second:
             if principalView.bottomImage.image != nil && principalView.topRightImageView.image != nil && principalView.topLeftImageView.image != nil {
                 tranformPrincipalView()
+                
                 sharePrincipalView()
             }
         case .third:
             if principalView.topRightImageView.image != nil && principalView.topLeftImageView.image != nil && principalView.bottomLeftImageView.image != nil && principalView.bottomRightImageView.image != nil {
                 tranformPrincipalView()
+                
                 sharePrincipalView()
             }
-       
+            
         }
     }
+    
+    /*@objc func playSound(_ sender: UISwipeGestureRecognizer) {
+        musicFile.play()
+    }*/
     
     // Touch to add photo
     @objc func imageTouched(sender: UITapGestureRecognizer) {
@@ -186,6 +180,35 @@ class ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
+    
+    
+    func addSound() {
+    
+        //swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+       
+        do {
+            if let fileURL = Bundle.main.path(forResource: "sound", ofType: "wav") {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
+                
+            } else {
+                print("No file with specified name exists")
+            }
+        } catch let error {
+            print("Can't play the audio file failed with an error \(error.localizedDescription)")
+        }
+    }
+        
+        /*let musicFile = Bundle.main.path(forResource: "sound", ofType: ".mp3")
+        
+        do {
+            try musicEffect = AVAudioPlayer(contentsOf: URL (fileURLWithPath: musicFile!))
+        }
+        catch {
+            print(error)
+        }
+        
+    }*/
+    
     
     
     fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {

@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		F00B916621E38F1C001CDD6E /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B916521E38F1C001CDD6E /* UIImagePickerController.swift */; };
+		F014EEB921E66F150006F726 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = F014EEB821E66F150006F726 /* sound.wav */; };
 		F0509F1F21E4E930006F518C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0509F1E21E4E930006F518C /* UIView.swift */; };
+		F0509F2121E4ED83006F518C /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0509F2021E4ED83006F518C /* Enumeration.swift */; };
+		F0509F2821E4F9FD006F518C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0509F2721E4F9FD006F518C /* AVFoundation.framework */; };
 		F08BA4F6219B0A3400802647 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F08BA4F5219B0A3400802647 /* ThirstySoftRegular.otf */; };
 		F08BA4F9219B0AAB00802647 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F08BA4F8219B0AAB00802647 /* Delm-Medium.otf */; };
 		F0D2F8492191EDCF00586B43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D2F8482191EDCF00586B43 /* AppDelegate.swift */; };
@@ -21,7 +24,10 @@
 
 /* Begin PBXFileReference section */
 		F00B916521E38F1C001CDD6E /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
+		F014EEB821E66F150006F726 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		F0509F1E21E4E930006F518C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		F0509F2021E4ED83006F518C /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
+		F0509F2721E4F9FD006F518C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F08BA4F5219B0A3400802647 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		F08BA4F8219B0AAB00802647 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../../../Downloads/Delm-Medium.otf"; sourceTree = "<group>"; };
 		F0D2F8452191EDCF00586B43 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0509F2821E4F9FD006F518C /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,11 +61,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F0509F2621E4F9FD006F518C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0509F2721E4F9FD006F518C /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F0D2F83C2191EDCF00586B43 = {
 			isa = PBXGroup;
 			children = (
 				F0D2F8472191EDCF00586B43 /* Instagrid */,
 				F0D2F8462191EDCF00586B43 /* Products */,
+				F0509F2621E4F9FD006F518C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +101,7 @@
 		F0D2F85A2191EE0D00586B43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0509F2021E4ED83006F518C /* Enumeration.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,6 +130,7 @@
 				F08BA4F8219B0AAB00802647 /* Delm-Medium.otf */,
 				F08BA4F5219B0A3400802647 /* ThirstySoftRegular.otf */,
 				F0D2F84F2191EDD000586B43 /* Assets.xcassets */,
+				F014EEB821E66F150006F726 /* sound.wav */,
 				F0D2F8512191EDD000586B43 /* LaunchScreen.storyboard */,
 				F0D2F8542191EDD000586B43 /* Info.plist */,
 			);
@@ -181,6 +199,7 @@
 				F08BA4F9219B0AAB00802647 /* Delm-Medium.otf in Resources */,
 				F0D2F8502191EDD000586B43 /* Assets.xcassets in Resources */,
 				F08BA4F6219B0A3400802647 /* ThirstySoftRegular.otf in Resources */,
+				F014EEB921E66F150006F726 /* sound.wav in Resources */,
 				F0D2F84E2191EDCF00586B43 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +216,7 @@
 				F0F6D71721A2BBC500CD0289 /* PrincipalView.swift in Sources */,
 				F0D2F8492191EDCF00586B43 /* AppDelegate.swift in Sources */,
 				F00B916621E38F1C001CDD6E /* UIImagePickerController.swift in Sources */,
+				F0509F2121E4ED83006F518C /* Enumeration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
