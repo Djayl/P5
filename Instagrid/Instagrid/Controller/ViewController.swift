@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     private var orientation = UIDevice.current.orientation
     private var swipeGestureRecognizer: UISwipeGestureRecognizer?
     //var musicFile = AVAudioPlayer()
-    var audioPlayer: AVAudioPlayer?
+    var audioPlayer = AVAudioPlayer()
 
     // Outlets
     @IBOutlet weak var firstStyleButton: UIButton!
@@ -92,9 +92,8 @@ class ViewController: UIViewController {
                 self.principalView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
             })
         }
-        audioPlayer?.play()
-        audioPlayer?.numberOfLoops = 0
-        //audioPlayer?.pause()
+        
+        playSound()
     }
     
     // Sharing Principal View with other application
@@ -136,9 +135,6 @@ class ViewController: UIViewController {
         }
     }
     
-    /*@objc func playSound(_ sender: UISwipeGestureRecognizer) {
-        musicFile.play()
-    }*/
     
     // Touch to add photo
     @objc func imageTouched(sender: UITapGestureRecognizer) {
@@ -182,7 +178,7 @@ class ViewController: UIViewController {
     }
     
     
-    func addSound() {
+    private func addSound() {
     
         //swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
        
@@ -197,19 +193,12 @@ class ViewController: UIViewController {
             print("Can't play the audio file failed with an error \(error.localizedDescription)")
         }
     }
-        
-        /*let musicFile = Bundle.main.path(forResource: "sound", ofType: ".mp3")
-        
-        do {
-            try musicEffect = AVAudioPlayer(contentsOf: URL (fileURLWithPath: musicFile!))
-        }
-        catch {
-            print(error)
-        }
-        
-    }*/
     
-    
+    private func playSound() {
+        audioPlayer.play()
+        
+    }
+ 
     
     fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
         return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})

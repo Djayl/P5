@@ -168,16 +168,13 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mn-Jb-BA4" userLabel="Bottom View">
-                                        <rect key="frame" x="8" y="152" width="279" height="135"/>
+                                        <rect key="frame" x="8" y="151.5" width="279" height="135.5"/>
                                         <subviews>
                                             <imageView hidden="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0G5-8U-TxO" userLabel="Bottom Image ">
-                                                <rect key="frame" x="0.0" y="0.0" width="279" height="135"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="0G5-8U-TxO" secondAttribute="height" multiplier="31:15" id="kp7-bS-lh2"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="135.5"/>
                                             </imageView>
                                             <button hidden="YES" opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tr-u8-OgY" userLabel="Bottom Central Button">
-                                                <rect key="frame" x="115.5" y="43.5" width="48" height="48"/>
+                                                <rect key="frame" x="115.5" y="44" width="48" height="48"/>
                                                 <state key="normal" backgroundImage="Combined Shape"/>
                                                 <connections>
                                                     <action selector="buttonTapped:" destination="AIG-jf-wyM" eventType="touchUpInside" id="U6s-Tk-NT3"/>
@@ -208,6 +205,7 @@
                                     <constraint firstAttribute="width" secondItem="AIG-jf-wyM" secondAttribute="height" multiplier="1:1" id="RyG-KC-9tS"/>
                                     <constraint firstItem="zU7-dE-OiR" firstAttribute="centerY" secondItem="Vfi-Xx-wiW" secondAttribute="centerY" id="Xdl-PK-0yY"/>
                                     <constraint firstItem="7mn-Jb-BA4" firstAttribute="leading" secondItem="AIG-jf-wyM" secondAttribute="leading" constant="8" id="YIs-HG-vcu"/>
+                                    <constraint firstItem="7mn-Jb-BA4" firstAttribute="top" secondItem="zU7-dE-OiR" secondAttribute="bottom" constant="8" id="bYC-c9-hm6"/>
                                     <constraint firstItem="Vfi-Xx-wiW" firstAttribute="top" secondItem="AIG-jf-wyM" secondAttribute="top" constant="8" id="bxB-Rk-a4F"/>
                                     <constraint firstAttribute="trailing" secondItem="dxK-TG-c2v" secondAttribute="trailing" constant="8" id="cgw-zV-his"/>
                                     <constraint firstAttribute="trailing" secondItem="Vfi-Xx-wiW" secondAttribute="trailing" constant="8" id="dIl-fX-9M5"/>

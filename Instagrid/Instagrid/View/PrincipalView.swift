@@ -104,6 +104,8 @@ class PrincipalView: UIView {
         topLeftButton.isHidden = false
         bottomView.isHidden = false
         bottomImage.isHidden = false
+        bottomImage.frame.size.width = bottomImage.self.frame.size.width+0.5
+        bottomView.frame.size.width = bottomView.self.frame.size.width+0.5
         bottomCentralButton.isHidden = false
         
     }
