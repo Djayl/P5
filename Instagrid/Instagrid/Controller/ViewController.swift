@@ -15,8 +15,7 @@ class ViewController: UIViewController {
     private let imagePicker = UIImagePickerController()
     private var orientation = UIDevice.current.orientation
     private var swipeGestureRecognizer: UISwipeGestureRecognizer?
-    //var musicFile = AVAudioPlayer()
-    var audioPlayer = AVAudioPlayer()
+    private var audioPlayer = AVAudioPlayer()
 
     // Outlets
     @IBOutlet weak var firstStyleButton: UIButton!
@@ -116,19 +115,16 @@ class ViewController: UIViewController {
         case .first:
             if principalView.topImage.image != nil && principalView.bottomLeftImageView != nil && principalView.bottomRightImageView.image != nil {
                 tranformPrincipalView()
-                
                 sharePrincipalView()
             }
         case .second:
             if principalView.bottomImage.image != nil && principalView.topRightImageView.image != nil && principalView.topLeftImageView.image != nil {
                 tranformPrincipalView()
-                
                 sharePrincipalView()
             }
         case .third:
             if principalView.topRightImageView.image != nil && principalView.topLeftImageView.image != nil && principalView.bottomLeftImageView.image != nil && principalView.bottomRightImageView.image != nil {
                 tranformPrincipalView()
-                
                 sharePrincipalView()
             }
             
@@ -177,10 +173,8 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    // A sound is heard when we swipe 
     private func addSound() {
-    
-        //swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
        
         do {
             if let fileURL = Bundle.main.path(forResource: "sound", ofType: "wav") {
