@@ -11,13 +11,13 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
-    // Vars
+    // Vars:
     private let imagePicker = UIImagePickerController()
     private var orientation = UIDevice.current.orientation
     private var swipeGestureRecognizer: UISwipeGestureRecognizer?
     private var audioPlayer = AVAudioPlayer()
 
-    // Outlets
+    // Outlets:
     @IBOutlet weak var firstStyleButton: UIButton!
     @IBOutlet weak var secondStyleButton: UIButton!
     @IBOutlet weak var thirdStyleButton: UIButton!
@@ -28,16 +28,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpObserver()
-        
         imagePicker.delegate = self
         swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(_:)))
-        
         swipeLabel.isUserInteractionEnabled = true
         swipeLabel.addGestureRecognizer(swipeGestureRecognizer!)
         addSound()
     }
     
-    // Actions
+    // Actions:
     
     @IBAction func didTapFirstStyleButton() {
         principalView.style = .first
@@ -187,7 +185,7 @@ class ViewController: UIViewController {
             print("Can't play the audio file failed with an error \(error.localizedDescription)")
         }
     }
-    
+    // Playing the sound
     private func playSound() {
         audioPlayer.play()
         
@@ -203,7 +201,7 @@ class ViewController: UIViewController {
         return input.rawValue
     }
 }
-    
+    // Extension:
     extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
         @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

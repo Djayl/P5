@@ -8,8 +8,7 @@
 
 import UIKit
 
-// MARK: Manages UIImagePickerController when device is rotated
-
+// Manages UIImagePickerController when the device is rotated
 extension UIImagePickerController {
     open override var shouldAutorotate: Bool { return true}
     

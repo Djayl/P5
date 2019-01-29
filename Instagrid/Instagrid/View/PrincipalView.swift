@@ -10,11 +10,10 @@ import UIKit
 
 class PrincipalView: UIView {
 
-    
+    // Vars:
     var currentTag: Int?
     
     // Outlets:
-    
     @IBOutlet weak var topRightView: UIView!
     @IBOutlet weak var topLeftView: UIView!
     @IBOutlet weak var bottomRightView: UIView!
@@ -56,6 +55,7 @@ class PrincipalView: UIView {
         }
     }
     
+    // The principal View is changed according the style
     func setStyle(_ style: Style) {
         switch style {
         case .first:
@@ -68,6 +68,7 @@ class PrincipalView: UIView {
         }
     }
     
+    // Modeling the fist style of pattern
     private func firstStyle() {
         
         topRightView.isHidden = true
@@ -88,9 +89,9 @@ class PrincipalView: UIView {
         bottomCentralButton.isHidden = true
         topView.isHidden = false
         topImage.isHidden = false
-       
-        
     }
+    
+    // Modeling the second style of pattern
     private func secondStyle() {
         
         topCentralButton.isHidden = true
@@ -104,11 +105,10 @@ class PrincipalView: UIView {
         topLeftButton.isHidden = false
         bottomView.isHidden = false
         bottomImage.isHidden = false
-        bottomImage.frame.size.width = bottomImage.self.frame.size.width+0.5
-        bottomView.frame.size.width = bottomView.self.frame.size.width+0.5
         bottomCentralButton.isHidden = false
-        
     }
+    
+    // Modeling the third style of pattern
     private func thirdStyle() {
         
         topView.isHidden = true
@@ -129,8 +129,6 @@ class PrincipalView: UIView {
         topLeftView.isHidden = false
         topLeftImageView.isHidden = false
         topLeftButton.isHidden = false
-    
     }
     
-   
 }

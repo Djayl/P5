@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Enumeration for the style of pattern
 enum Style {
     case first, second, third
     
